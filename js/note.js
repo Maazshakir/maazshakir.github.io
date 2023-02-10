@@ -4,9 +4,9 @@ function notesFormat(Heading,mainText){
 }
 
 let allNotes = [
-    new notesFormat("Note1" , "cownis an animal"),
-    new notesFormat("Notscjse2" , "what about sheep"),
-    new notesFormat("Note1" , "hen is also here")
+    new notesFormat("Note1" , "sample note1"),
+    new notesFormat("Note2" , "sample note2"),
+    new notesFormat("Note3" , "sample note3")
 ]
 
 
