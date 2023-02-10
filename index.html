@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/reset.css">
+    <link rel="stylesheet" href="/style/main.css">
+    <title>Notes App</title>
+</head>
+<body id="main-body">
+    <section id="settings-bar">
+        <button class="simp-button" id="close-settings" onclick="closeSettings()"></button>
+
+        <div id="setting-options">
+            <h3 class="settings-header" onclick="changeView(1)">Theme</h3>
+            <h3 class="settings-header" onclick="changeView(2)">Font</h3>
+            <h3 class="settings-header" onclick="changeView(3)">Settings</h3>
+            <h3 class="settings-header" onclick="changeView(4)">Customize</h3>
+        </div>
+        <div id="setting-submenus">
+            
+
+        </div>
+
+    </section>
+
+
+    <section class="sections" id="main-section">
+        <section id="left-column">
+            <h1>Unote</h1>
+            <div id="all-notes">
+            </div>
+        </section>
+
+        <section id="right-column">
+            <div id="top-row">
+                <input type="text" id="input-name" placeholder="Enter the Notes Title">
+                <button id="add-note"></button>
+
+                <button class="default-button" id="open-settings" onclick="openSettings()"></button>
+                
+            </div>
+            <div id="single-note">
+                <input id="single-heading" value=''>
+                <button class="simp-button" id="delete-note"></button>
+                <button class="simp-button" id="save-note" onclick="saveNote()"></button><br>
+                <textarea id="single-text"></textarea>
+            </div>
+        </section>
+    </section>
+
+        
+    <script src="/js/theme.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/note.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
