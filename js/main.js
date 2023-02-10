@@ -47,6 +47,7 @@ function saveNote(){
     allNotes[Index].mainText = getSingleText.value;
     getAllNotes.innerHTML='';
     displayAllNotes();
+    alert("note saved sucessfully");
 }
 
 //initial start
