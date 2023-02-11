@@ -26,6 +26,8 @@ addNote.addEventListener("click",function(){
     if(inputName.value!=""){
         allNotes.push(new notesFormat(inputName.value , ""));
         getAllNotes.innerHTML+='<div id="notes-heading" onclick="openNote('+(allNotes.length-1)+')"><h3>'+ allNotes[(allNotes.length-1)].Heading +'</h3></div>';
+        updateNote(allNotes.length-1, inputName.value+":"+"write your text here");
+        inputName.value="";
     }
     else{
         alert("Give your note a heading");
@@ -36,6 +38,7 @@ addNote.addEventListener("click",function(){
 
 deleteNote.addEventListener('click',function(){
     allNotes.splice(Index,1);
+    deleteNoteFromStorage();
     document.getElementById("single-note").style.visibility = "hidden";
     getAllNotes.innerHTML='';
     displayAllNotes();
@@ -43,8 +46,11 @@ deleteNote.addEventListener('click',function(){
 })
 
 function saveNote(){
-    allNotes[Index].Heading = getSingleHeading.value;
-    allNotes[Index].mainText = getSingleText.value;
+    updateNote(Index, getSingleHeading.value+":"+getSingleText.value);
+    while (allNotes.length > 0) {
+        allNotes.pop();
+    }
+    retrieveDataFromLocalStorage();
     getAllNotes.innerHTML='';
     displayAllNotes();
     alert("note saved sucessfully");
