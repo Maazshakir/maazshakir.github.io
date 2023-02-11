@@ -10,7 +10,12 @@ let deleteNote = document.getElementById("delete-note");
 // 0 dark    1 light
 /*end */
 
-let themeIndex = 0;
+let themes = [
+    new theme(grabbCssElement('--dark-background'),grabbCssElement('--dark-font-color1'),grabbCssElement('--dark-font-color2'),grabbCssElement('--dark-hover-color') )   , new theme(grabbCssElement('--light-background'),grabbCssElement('--light-font-color1'),grabbCssElement('--light-font-color2'),grabbCssElement('--light-hover-color') )
+]
+
+
+let themeIndex;
 
 function updateTheme(){
     let getBody = document.getElementById("main-body");
@@ -20,24 +25,39 @@ function updateTheme(){
 
     if(themeIndex>0){
         themeIndex -= 1;
-        getLightTheme.style.backgroundColor = "gray";
+        try{
+            getLightTheme.style.backgroundColor = "gray";;
+        }catch{
+            console.log("bootup")
+        }
+        
     }else{
         themeIndex += 1;
-        getLightTheme.style.backgroundColor = "green";
+        try{
+            getLightTheme.style.backgroundColor = "green";
+        }catch{
+            console.log("bootup");
+        }
+        
     }
-    
-    
-
     getBody.style.backgroundColor = themes[themeIndex].backgroundColor;
     getLeftColumnH1.style.color = themes[themeIndex].fontColor2;
     for (var i = 0; i < getH3.length; i++) {
         getH3[i].style.color = themes[themeIndex].fontColor2;
     }
-    
-    
+
     inputName.style.backgroundColor = themes[themeIndex].backgroundColor;
     getSingleHeading.style.color = themes[themeIndex].fontColor2;
     getSingleText.style.color = themes[themeIndex].fontColor2;
+
+
+    if(themeIndex == 1){
+        setCookie("themeID", 0, 365);
+    }else{
+        setCookie("themeID", 1, 365);   
+    }
+
+    
 }
 
 function theme(backgroundColor,fontColor1,fontColor2,hoverColor){
@@ -52,9 +72,6 @@ function grabbCssElement(element){
     return getComputedStyle(document.documentElement).getPropertyValue(element);
 }
 
-let themes = [
-    new theme(grabbCssElement('--dark-background'),grabbCssElement('--dark-font-color1'),grabbCssElement('--dark-font-color2'),grabbCssElement('--dark-hover-color') )   , new theme(grabbCssElement('--light-background'),grabbCssElement('--light-font-color1'),grabbCssElement('--light-font-color2'),grabbCssElement('--light-hover-color') )
-]
 
 
 
