@@ -28,6 +28,7 @@ addNote.addEventListener("click",function(){
         getAllNotes.innerHTML+='<div id="notes-heading" onclick="openNote('+(allNotes.length-1)+')"><h3>'+ allNotes[(allNotes.length-1)].Heading +'</h3></div>';
         updateNote(allNotes.length-1, inputName.value+":"+"write your text here");
         inputName.value="";
+        updateTheme2();
     }
     else{
         alert("Give your note a heading");
