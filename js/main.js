@@ -43,6 +43,7 @@ deleteNote.addEventListener('click',function(){
     document.getElementById("single-note").style.visibility = "hidden";
     getAllNotes.innerHTML='';
     displayAllNotes();
+    updateTheme2();
     console.log(Index);
 })
 
@@ -54,6 +55,7 @@ function saveNote(){
     retrieveDataFromLocalStorage();
     getAllNotes.innerHTML='';
     displayAllNotes();
+    updateTheme2();
     alert("note saved sucessfully");
 }
 
