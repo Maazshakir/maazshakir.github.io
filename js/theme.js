@@ -60,6 +60,18 @@ function updateTheme(){
     
 }
 
+/*with predefined parameter */
+
+function updateTheme2(){
+    let getH3 = document.getElementsByTagName('h3');
+
+    for (var i = 0; i < getH3.length; i++) {
+        getH3[i].style.color = themes[themeIndex].fontColor2;
+    }
+    
+}
+/* */
+
 function theme(backgroundColor,fontColor1,fontColor2,hoverColor){
     this.backgroundColor = backgroundColor;
     this.fontColor1 = fontColor1;
@@ -71,6 +83,11 @@ function theme(backgroundColor,fontColor1,fontColor2,hoverColor){
 function grabbCssElement(element){
     return getComputedStyle(document.documentElement).getPropertyValue(element);
 }
+
+
+
+
+/*Cookie data --initial run*/ 
 
 
 
