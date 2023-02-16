@@ -100,6 +100,7 @@
 }
 
 #main-body section #right-column #top-row {
+  display: flex;
   z-index: 5;
   height: 55px;
   width: 100%;
@@ -120,15 +121,14 @@
 }
 
 #main-body section #right-column #top-row #add-note {
-  position: absolute;
   background-image: url("/img/addIcon.png");
   background-repeat: no-repeat;
   background-size: contain;
   height: 30px;
   width: 30px;
   border-radius: 15px;
-  margin-left: 15px;
-  margin-top: 10px;
+  margin-left: 3%;
+  margin-top: 12px;
 }
 
 #main-body section #right-column #top-row #open-settings {
