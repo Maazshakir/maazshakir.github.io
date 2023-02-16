@@ -9,6 +9,17 @@
   background-color: #202020;
 }
 
+#main-body .filter-notes select {
+  border-radius: 10px;
+  border-color: gray;
+  border-width: 1px;
+  color: #202020;
+}
+
+#main-body .filter-notes select option {
+  color: #202020;
+}
+
 #main-body .default-button {
   background-color: transparent;
   border-color: gray;
@@ -52,6 +63,15 @@
   z-index: 5;
   border-color: gray;
   border-style: solid;
+}
+
+#main-body section #left-column #filter-notes1 {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-color: gray;
 }
 
 #main-body section #left-column #all-notes {
@@ -100,6 +120,8 @@
 }
 
 #main-body section #right-column #top-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   z-index: 5;
   height: 55px;
@@ -113,7 +135,7 @@
   display: inline;
   margin-left: 30%;
   background-color: #393939;
-  width: 40%;
+  width: 30%;
   border-radius: 10px;
   height: 30px;
   color: gray;
@@ -135,7 +157,7 @@
   float: right;
   display: block;
   margin-top: 15px;
-  margin-right: 3%;
+  margin-left: 10%;
   background-image: url("/img/settings.png");
   height: 25px;
   background-repeat: no-repeat;
@@ -159,7 +181,7 @@
 
 #main-body section #right-column #single-note #single-heading {
   color: whitesmoke;
-  width: 70%;
+  width: 40%;
   font-weight: bold;
   font-size: 20px;
   margin-left: 2%;
@@ -168,6 +190,11 @@
   border-width: 2px;
   border-style: solid;
   border-radius: 10px;
+}
+
+#main-body section #right-column #single-note #filter-notes2 {
+  padding-top: 20px;
+  padding-left: 15px;
 }
 
 #main-body section #right-column #single-note #single-text {
